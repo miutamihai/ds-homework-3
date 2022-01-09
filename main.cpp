@@ -1,22 +1,11 @@
-#include "static-list.h"
-#include <iostream>
+#include "farey.h"
+
+using Iterator = std::vector<Pair>::iterator;
 
 int main() {
-  auto object = new StaticList();
-  int value, index;
-  std::cin >> value;
+    std::vector<Pair> sequence = generateSequence(4);
 
-  while(value != 0) {
-    object->insert(object->length(), value);
-
-    std::cin >> value;
-  }
-
-  object->print();
-
-  object->sort();
-
-  object->print();
-
-  return 0;
+    for(Iterator iterator = sequence.begin(); iterator != sequence.end(); ++ iterator) {
+        displayPair(*iterator);
+    }
 }
